@@ -1,0 +1,135 @@
+{
+  "id": "00002",
+  "schemaUrl": "/00002.json",
+  "pageTitle": "Candidate Feedback Form",
+  "pageId": "00001",
+  "pageurl": "/",
+  "description": "Multi-step form example",
+  "version": "1.0",
+  "submitUrl": "",
+  "submitButtonText": "Submit",
+  "navigation": {
+    "showStepCounter": true,
+    "backButtonText": "Back",
+    "nextButtonText": "Next",
+    "submitButtonText": "Submit"
+  },
+  "steps": [
+    {
+      "id": "personal-details",
+      "title": "Personal details",
+      "description": "Tell us about yourself",
+      "nextButtonText": "Continue to preferences",
+      "fields": [
+        {
+          "id": "firstName",
+          "type": "text",
+          "label": "First name",
+          "required": true,
+          "placeholder": "Enter first name"
+        },
+        {
+          "id": "email",
+          "type": "email",
+          "label": "Email address",
+          "required": true
+        },
+        {
+          "id": "dateOfBirth",
+          "type": "date",
+          "label": "Date of birth"
+        }
+      ]
+    },
+    {
+      "id": "preferences",
+      "title": "Preferences",
+      "nextButtonText": "Continue to additional information",
+      "fields": [
+        {
+          "id": "contactMethod",
+          "type": "radio",
+          "label": "Preferred Contact Method",
+          "required": true,
+          "options": [
+            {
+              "label": "Email",
+              "value": "email"
+            },
+            {
+              "label": "Phone",
+              "value": "phone"
+            }
+          ]
+        },
+        {
+          "id": "interests",
+          "type": "checkbox-group",
+          "label": "Areas of Interest",
+          "options": [
+            {
+              "label": "SharePoint",
+              "value": "sharepoint"
+            },
+            {
+              "label": "Power Platform",
+              "value": "powerplatform"
+            },
+            {
+              "label": "Copilot",
+              "value": "copilot"
+            }
+          ]
+        },
+        {
+          "id": "country",
+          "type": "select",
+          "label": "Country",
+          "options": [
+            {
+              "label": "Australia",
+              "value": "au"
+            },
+            {
+              "label": "New Zealand",
+              "value": "nz"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "additional-information",
+      "title": "Additional Information",
+      "fields": [
+        {
+          "id": "experience",
+          "type": "textarea",
+          "label": "Describe your experience",
+          "rows": 5
+        },
+        {
+          "id": "resume",
+          "type": "file",
+          "label": "Upload Resume",
+          "acceptedTypes": [
+            ".pdf",
+            ".docx"
+          ],
+          "maxSizeMb": 10
+        },
+        {
+          "id": "rating",
+          "type": "rating",
+          "label": "Rate your experience",
+          "max": 5
+        },
+        {
+          "id": "newsletter",
+          "type": "toggle",
+          "label": "Subscribe to newsletter"
+        }
+      ]
+    }
+  ]
+}

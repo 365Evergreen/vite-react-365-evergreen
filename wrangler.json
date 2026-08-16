@@ -3,7 +3,9 @@
 	"name": "vite-react-365-evergreen",
 	"main": "./src/worker/index.ts",
 	"compatibility_date": "2025-10-08",
-	"compatibility_flags": ["nodejs_compat"],
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
 	"observability": {
 		"enabled": true
 	},
@@ -11,5 +13,20 @@
 	"assets": {
 		"directory": "./dist/client",
 		"not_found_handling": "single-page-application"
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "_365_evergreen_website_db",
+			"database_name": "365-evergreen-website-db",
+			"database_id": "b73b0041-5672-42c2-88fc-7d78bb031bb8",
+			"remote": true
+		}
+	],
+	"r2_buckets": [
+		{
+			"bucket_name": "365-evergreen-website-uploads",
+			"binding": "_365_evergreen_website_uploads",
+			"remote": true
+		}
+	]
 }

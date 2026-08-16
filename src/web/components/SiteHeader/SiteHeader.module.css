@@ -1,0 +1,163 @@
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+
+  background-color: transparent; 
+  border-bottom: none;
+  z-index: 1000;
+
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  top: 0;
+  position: fixed; 
+  background-color: white; 
+  border-bottom: 1px solid #e5e5e5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 72px;
+  padding: 0 4rem;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
+
+.brandLogo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  display: block;
+}
+
+.brandText {
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.navigation {
+  display: flex;
+  align-items: end;
+  justify-content: right;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.userName {
+  font-size: 0.95rem;
+  line-height: 1;
+  color: #344054;
+}
+
+.signIn,
+.signOut {
+  text-decoration: none;
+  color: #344054;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.toolsButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0;
+}
+
+.menuToggle {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .container {
+    min-height: 64px;
+    padding: 0 16px;
+    gap: 16px;
+  }
+
+  .brandText {
+    font-size: 1rem;
+  }
+
+  .menuToggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    height: 36px;
+    padding: 0 12px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: none;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 12px 16px;
+    z-index: 20;
+  }
+
+  .open {
+    display: block;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+
+  .userName {
+    display: none;
+  }
+
+  .signOut {
+    display: none;
+  }
+}

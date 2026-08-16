@@ -1,0 +1,162 @@
+.hero {
+  margin-top: calc(-1 * var(--space-12));
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  background: var(--surface);
+  position: relative;
+  min-height: 100svh;
+  padding-top: calc(var(--header-height) + var(--space-8));
+  padding-bottom: var(--space-8);
+}
+
+.content {
+  position: relative;
+  width: 49%;
+  max-width: 49%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding-left: clamp(1rem, 5vw, 4rem);
+  padding-right: clamp(1rem, 5vw, 4rem);
+}
+
+
+.copy {
+  max-width: min(48rem, 100%);
+  display: grid;
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.8rem, 6vw, 3.25rem);
+  line-height: 1.15;
+  font-weight: 450;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: clamp(1rem, 2.8vw, 1.25rem);
+  line-height: 1.45;
+  max-width: 65ch;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  width: fit-content;
+  background: var(--accent);
+  color: var(--text-inverted);
+  text-decoration: none;
+  font-weight: 300;
+  padding: var(--space-2) var(--space-2);
+  transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--accent-strong);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background-color: #ebedf0;
+  background-image: url('https://cdn.365evergreen.com/media/plant-cover-1440-900.webp');
+  background-position: right center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.2) 70%);
+  pointer-events: none;
+}
+
+.imageElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  animation: slowZoom 20s ease-in-out infinite alternate;
+  transform-origin: right center;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    min-height: min(92svh, 46rem);
+    padding-top: calc(var(--header-height) + var(--space-6));
+  }
+
+  .content {
+    padding-inline: clamp(1rem, 5vw, 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: min(80svh, 42rem);
+    margin-top: calc(-1 * var(--space-12));
+    padding-top: calc(var(--header-height) + var(--space-4));
+    padding-bottom: var(--space-6);
+  }
+
+  .content {
+    gap: var(--space-4);
+    padding-inline: var(--space-4);
+  }
+
+  .cta {
+    width: 100%;
+  }
+
+  .image::after {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.5) 100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .title,
+  .imageElement {
+    animation: none;
+  }
+
+  .title {
+    opacity: 1;
+    transform: none;
+  }
+}
