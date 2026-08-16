@@ -11,7 +11,6 @@ import '@tiptap/extension-code'
 import '@tiptap/extension-history'
 import '@tiptap/extension-link'
 import '@tiptap/extension-image'
-import { RemoveThis } from '@tiptap/core';
 
 declare module '@tiptap/core' {
   interface ChainedCommands {
